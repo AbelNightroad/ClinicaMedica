@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:o="http://omnifaces.org/ui">
+
+<h:head>
+	<title>Sistema de Gestão de Residentes em Clínica Médica</title>
+</h:head>
+
+<h:body>
+	<div id="header" style="margin-bottom: 2%">
+		<h:form id="frmMenu">
+			<p:menubar id="topMenu">
+				<p:menuitem value="Início" icon="fa fa-home" />
+				
+				<p:submenu label="Cadastrar">
+					<p:menuitem value="Residente" />
+					<p:menuitem value="Operador" />
+					<p:menuitem value="Plano" />
+					<p:menuitem value="Local" />
+				</p:submenu>
+				
+				<p:submenu label="Buscar" icon="fa fa-search">
+					<p:menuitem value="Residente" />
+					<p:menuitem value="Operador" />
+					<p:menuitem value="Plano" />
+					<p:menuitem value="Local" />
+				</p:submenu>
+				
+				<p:submenu label="Relatorios" icon="fa fa-file-pdf-o">
+					<p:menuitem value="Escala R1" />
+					<p:menuitem value="Escala R2" />
+					<p:menuitem value="Plantão Quinzenal R1" />
+					<p:menuitem value="Plantão Quinzenal R2" />
+				</p:submenu>
+				
+				<p:menuitem value="Logout" icon="fa fa-sign-out"/>
+			</p:menubar>
+		</h:form>
+	</div>
+
+	<div id="content" style="width: 70%; margin: auto; padding: 2%">
+		<ui:insert name="content" />
+	</div>
+
+	<div id="footer"
+		style="margin-top: 2%; border: 3px solid #000000; padding: 5px">
+		<p:outputLabel value="Problemas ou Dúvidas? Ligue para 2993" />
+	</div>
+
+</h:body>
+</html>

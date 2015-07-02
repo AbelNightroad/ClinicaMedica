@@ -15,31 +15,32 @@
 <h:body>
 	<div id="header" style="margin-bottom: 2%">
 		<h:form id="frmMenu">
+			<p:growl id="messages" autoUpdate="true" showDetail="true" />
 			<p:menubar id="topMenu">
-				<p:menuitem value=" Início" icon="fa fa-home" />
+				<p:menuitem value="Início" icon="fa fa-home" url="intro.jsf"/>
 				
-				<p:submenu label=" Cadastrar" icon="fa fa-plus">
+				<p:submenu label="Cadastrar" icon="fa fa-plus">
+					<p:menuitem value="Residente" url="addResidente.jsf"/>
+					<p:menuitem value="Operador" />
+					<p:menuitem value="Plano" />
+					<p:menuitem value="Local" />
+				</p:submenu>
+				
+				<p:submenu label="Buscar" icon="fa fa-search">
 					<p:menuitem value="Residente" />
 					<p:menuitem value="Operador" />
 					<p:menuitem value="Plano" />
 					<p:menuitem value="Local" />
 				</p:submenu>
 				
-				<p:submenu label=" Buscar" icon="fa fa-search">
-					<p:menuitem value="Residente" />
-					<p:menuitem value="Operador" />
-					<p:menuitem value="Plano" />
-					<p:menuitem value="Local" />
-				</p:submenu>
-				
-				<p:submenu label=" Relatorios" icon="fa fa-file-pdf-o">
+				<p:submenu label="Relatorios" icon="fa fa-file-pdf-o">
 					<p:menuitem value="Escala R1" />
 					<p:menuitem value="Escala R2" />
 					<p:menuitem value="Plantão Quinzenal R1" />
 					<p:menuitem value="Plantão Quinzenal R2" />
 				</p:submenu>
 				
-				<p:menuitem value=" Logout" icon="fa fa-sign-out"/>
+				<p:menuitem value="Logout" icon="fa fa-sign-out" />
 			</p:menubar>
 		</h:form>
 	</div>
@@ -49,7 +50,7 @@
 	</div>
 
 	<div id="footer"
-		style="margin-top: 2%; border: 3px solid #000000; padding: 5px">
+		style="margin-top: 2%; border: 2px solid #000000; padding: 5px">
 		<p:outputLabel value="Problemas ou Dúvidas? Ligue para 2993"/>
 	</div>
 

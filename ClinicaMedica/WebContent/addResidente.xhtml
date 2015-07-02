@@ -1,0 +1,34 @@
+<ui:composition template="/base/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:o="http://omnifaces.org/ui">
+
+	<ui:define name="content">
+		<p:panel header="Cadastro de Residentes">
+			<h:form id="addResidente">
+			<p:panelGrid columns="2" >
+				<p:outputLabel value="Nome" for="inpNome"/>
+				<p:inputText id="inpNome" required="true" requiredMessage="Preencher o Nome"/>
+				<p:outputLabel value="Telefone" for="inpTelefone" />
+				<p:inputMask mask="(99) 9999-9999" id="inpTelefone" required="true" requiredMessage="Preencher o Telefone"/>
+				<p:outputLabel value="Celular" for="inpCelular" />
+				<p:inputMask mask="(99) 99999-9999" id="inpCelular" required="true" requiredMessage="Preencher o Celular"/>
+				<p:outputLabel value="E-Mail" for="inpEmail" />
+				<p:inputText id="inpEmail" required="true" requiredMessage="Preencher o E-mail"/>
+				<p:outputLabel value="CNES" for="inpCnes" />
+				<p:inputText id="inpCnes" required="true" requiredMessage="Preencher o CNES"/>
+				<p:outputLabel value="Residente" for="inpResidente" />
+				<p:inputText id="inpResidente" required="true" requiredMessage="Preencher o Tipo"/>
+				<p:outputLabel value="Plano" for="inpResidente" />
+				<p:inputText id="inpPlano" required="true" requiredMessage="Preencher o Plano"/>
+				<p:commandButton value="Salvar" />
+				<p:commandButton value="Limpar" type="reset" />
+			</p:panelGrid>
+			</h:form>
+		</p:panel>
+	</ui:define>
+</ui:composition>

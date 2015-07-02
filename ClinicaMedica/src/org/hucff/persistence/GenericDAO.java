@@ -14,6 +14,7 @@ import javax.persistence.criteria.Root;
 public class GenericDAO<T, ID extends Serializable> {
 	@PersistenceContext(unitName="ClnicaMedica")
 	private EntityManager entityManager;
+	
 	private final Class<T> classe;
 	
 	@SuppressWarnings("unchecked")
@@ -41,8 +42,13 @@ public class GenericDAO<T, ID extends Serializable> {
 		getEntityManager().remove(entity);
 	}
 	
-	public T cuscarPorId(ID id) {
-		return (T) getEntityManager().find(classe, id);
+	public T buscarPorId(ID id) {
+		CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
+		CriteriaQuery<T> cq = cb.createQuery(classe);
+		Root<T> r = cq.from(classe);
+		cq.select(r);
+		TypedQuery<T> query = getEntityManager().createQuery(cq);
+		return query.getSingleResult();
 	}
 	
 	public List<T> buscarTodos() {

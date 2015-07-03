@@ -1,5 +1,7 @@
 package org.abelnightroad.model;
 
-public class Autor {
+import org.abelnightroad.persistence.EntidadeBase;
 
+public class Autor extends EntidadeBase<Integer>{
+	private String nome;
 }

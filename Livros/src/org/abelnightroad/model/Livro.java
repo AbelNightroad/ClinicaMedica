@@ -3,14 +3,26 @@ package org.abelnightroad.model;
 import java.math.BigDecimal;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import org.abelnightroad.persistence.EntidadeBase;
 
+@Entity
+@Table(name="Livro")
 public class Livro extends EntidadeBase<Integer>{
+	
+	@Column(nullable=false)
 	private String titulo;
 	private List<Autor> autores;
+	
+	@Column(nullable=false, unique=true)
 	private String isbn;
 	private String edicao;
 	private String anoLancamento;
+	
+	@Column(precision=7, scale=2)
 	private BigDecimal preco;
 	
 	public Livro() {}
